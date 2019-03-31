@@ -1,0 +1,42 @@
+@tailwind preflight;
+
+@tailwind components;
+
+.rooms::before {
+    content: "🛏";
+}
+
+.door::before {
+    content: "🚪";
+}
+
+.people::before {
+    content: "☺";
+}
+
+.calendar::before {
+    content: "📅";
+}
+
+.icon {
+    @apply mr-12;
+    @apply text-center;
+}
+
+.icon::before {
+    @apply p-2;
+    @apply rounded-full;
+    @apply text-4xl;
+    @apply text-grey-dark;
+    @apply text-center;
+    @apply bg-grey-lighter;
+    @apply font-mono;
+    @apply mr-4;
+}
+
+.available::before {
+    content: "●";
+    @apply text-green absolute pin-t pin-r pr-2 pt-1;
+}
+
+@tailwind utilities;
