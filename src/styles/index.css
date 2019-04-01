@@ -39,4 +39,9 @@
     @apply text-green absolute pin-t pin-r pr-2 pt-1;
 }
 
+.unavailable::before {
+    content: "●";
+    @apply text-red absolute pin-t pin-r pr-2 pt-1;
+}
+
 @tailwind utilities;

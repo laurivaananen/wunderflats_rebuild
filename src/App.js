@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import apt_1 from './img/apt_1.jpg';
 import apt_2 from './img/apt_2.jpg';
+import pic_1 from './img/pic_1.jpg';
+import Calendar from './components/calendar.js';
 
 const App = () => {
   return (
@@ -8,24 +10,28 @@ const App = () => {
       <Navigation />
       <Image />
       <Header />
+      {/* <Calendar /> */}
     </>
   )
 }
 
 const Navigation = () => (
-  <nav className="flex h-24 bg-white items-center justify-between">
-    <div className="ml-6">
-      <a href="#" className="text-purple-dark text-lg no-underline tracking-wide">REALESTATE</a>
-    </div>
-    <div className="mr-6">
-      <a href="#" className="text-grey-darkest no-underline text-sm">Become a landlord</a>
-      <a href="#" className="text-grey-darkest no-underline text-sm ml-6 pr-6 border-r-2 py-1">Help</a>
-      <a href="#" className="text-grey-darkest no-underline text-sm px-6 border-r-2 py-1">🕽 +12 34 567 890</a>
-      <div className="inline ml-6">
-        <a href="#" className="font-bold text-grey-darkest no-underline text-sm">Login</a>
-        <span className="text-grey-darkest text-sm"> / </span>
-        <a href="#" className="font-bold text-grey-darkest no-underline text-sm">Sign Up</a>
+  <nav className="h-16 lg:h-24 bg-white">
+    <div className="h-full flex items-center justify-between invisible lg:visible">
+      <div className="ml-6 visible">
+        <a href="#" className="text-purple-dark text-lg no-underline tracking-wide">REALESTATE</a>
       </div>
+      <div className="mr-6">
+        <a href="#" className="text-grey-darkest no-underline text-sm">Become a landlord</a>
+        <a href="#" className="text-grey-darkest no-underline text-sm ml-6 pr-6 border-r-2 py-1">Help</a>
+        <a href="#" className="text-grey-darkest no-underline text-sm px-6 border-r-2 py-1">🕽 +12 34 567 890</a>
+        <div className="inline ml-6">
+          <a href="#" className="font-bold text-grey-darkest no-underline text-sm">Login</a>
+          <span className="text-grey-darkest text-sm"> / </span>
+          <a href="#" className="font-bold text-grey-darkest no-underline text-sm">Sign Up</a>
+        </div>
+      </div>
+      <button className="visible lg:invisible mr-6 text-3xl font-bold">𝄘</button>
     </div>
   </nav>
 )
@@ -40,7 +46,7 @@ const Image = () => {
 }
 
 const Header = () => (
-  <article style={{paddingRight: "270px"}} className="w-full xl:w-1200px px-6 mx-auto relative">
+  <article className="w-full xl:w-1200px px-6 mx-auto relative lg:pr-270">
     <span style={{top: "-0.5rem"}} className="relative bg-purple-darker text-purple-lighter rounded-full py-2 px-4 text-base">
       <span className="font-bold text-purple-lightest">1990 €</span> / month
     </span>
@@ -152,35 +158,25 @@ const Header = () => (
     <hr className="border-b my-12 border-grey-lighter"/>
     <section>
       <h3 className="text-2xl mb-12">Availability</h3>
-      <ul className="list-reset border-grey-lighter border">
-        <li className="h-32 text-center pt-24 available relative w-1/6 border-grey-lighter border-b border-r inline-block">Jan 2019</li>
-        <li className="h-32 text-center pt-24 available relative w-1/6 border-grey-lighter border-b border-r inline-block">Feb 2019</li>
-        <li className="h-32 text-center pt-24 available relative w-1/6 border-grey-lighter border-b border-r inline-block">Mar 2019</li>
-        <li className="h-32 text-center pt-24 available relative w-1/6 border-grey-lighter border-b border-r inline-block">Apr 2019</li>
-        <li className="h-32 text-center pt-24 available relative w-1/6 border-grey-lighter border-b border-r inline-block">May 2019</li>
-        <li className="h-32 text-center pt-24 available relative w-1/6 border-grey-lighter border-b inline-block">Jun 2019</li>
-        <li className="h-32 text-center pt-24 available relative w-1/6 border-grey-lighter border-r inline-block">Jul 2019</li>
-        <li className="h-32 text-center pt-24 available relative w-1/6 border-grey-lighter border-r inline-block">Aug 2019</li>
-        <li className="h-32 text-center pt-24 available relative w-1/6 border-grey-lighter border-r inline-block">Sep 2019</li>
-        <li className="h-32 text-center pt-24 available relative w-1/6 border-grey-lighter border-r inline-block">Oct 2019</li>
-        <li className="h-32 text-center pt-24 available relative w-1/6 border-grey-lighter border-r inline-block">Nov 2019</li>
-        <li className="h-32 text-center pt-24 available relative w-1/6 border-grey-lighter  inline-block">Dec 2019</li>
-      </ul>
+      <Calendar />
     </section>
     <hr className="border-b my-12 border-grey-lighter"/>
-    <div style={{bottom: "100%", width: "270px"}} className="rounded-t-lg p-8 absolute pin-r bg-white">
-      <form action="POST" className="flex flex-col items-center">
-        <h3 className="mb-6 text-base">New booking request</h3>
-        <input type="text" placeholder="From" className="mb-4 rounded-sm border-2 border-grey-lighter p-3 w-full"/>
-        <input type="text" placeholder="To" className="mb-4 rounded-sm border-2 border-grey-lighter p-3 w-full"/>
-        <input type="button" className="mb-4 bg-green rounded-full p-3 w-full text-white font-bold" value="Request to book" />
-        <span className="text-grey text-sm">You won't be charged yet</span>
-      </form>
-    </div>
-    <div style={{width: "270px"}} className="flex flex-col items-center bg-grey-light absolute pin-t pin-r p-8 rounded-b-lg">
-      <h3 className="mb-6 text-base">Your contact person</h3>
-      <p className="mb-6">Lauri Väänänen</p>
-      <button className="font-bold text-sm px-4 py-2 border-grey w-full border-2 rounded-full">Questions?</button>
+    <div className="flex lg:block">
+      <div style={{bottom: "100%", width: "270px"}} className="rounded-t-lg p-8 lg:absolute pin-r bg-white flex-1">
+        <form action="POST" className="flex flex-col items-center">
+          <h3 className="mb-6 text-base">New booking request</h3>
+          <input type="text" placeholder="From" className="mb-4 rounded-sm border-2 border-grey-lighter p-3 w-full"/>
+          <input type="text" placeholder="To" className="mb-4 rounded-sm border-2 border-grey-lighter p-3 w-full"/>
+          <input type="button" className="mb-4 bg-green rounded-full p-3 w-full text-white font-bold" value="Request to book" />
+          <span className="text-grey text-sm">You won't be charged yet</span>
+        </form>
+      </div>
+      <div style={{width: "270px"}} className="flex flex-col items-center bg-grey-light lg:absolute pin-t pin-r p-8 flex-1 rounded-b-lg">
+        <h3 className="mb-6 text-base">Your contact person</h3>
+        <img src={pic_1} className="rounded-full w-24 h-24 mb-4 border" alt=""/>
+        <p className="mb-6">Lauri Väänänen</p>
+        <button className="font-bold text-sm px-4 py-2 border-grey w-full border-2 rounded-full">Questions?</button>
+      </div>
     </div>
   </article>
 )
