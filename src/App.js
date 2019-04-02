@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import apt_1 from './img/apt_1.jpg';
 import apt_2 from './img/apt_2.jpg';
 import pic_1 from './img/pic_1.jpg';
-import Calendar from './components/calendar.js';
+import Navigation from './components/navigation';
+import Calendar from './components/calendar';
 
 const App = () => {
   return (
@@ -10,31 +11,11 @@ const App = () => {
       <Navigation />
       <Image />
       <Header />
-      {/* <Calendar /> */}
     </>
   )
 }
 
-const Navigation = () => (
-  <nav className="h-16 lg:h-24 bg-white">
-    <div className="h-full flex items-center justify-between invisible lg:visible">
-      <div className="ml-6 visible">
-        <a href="#" className="text-purple-dark text-lg no-underline tracking-wide">REALESTATE</a>
-      </div>
-      <div className="mr-6">
-        <a href="#" className="text-grey-darkest no-underline text-sm">Become a landlord</a>
-        <a href="#" className="text-grey-darkest no-underline text-sm ml-6 pr-6 border-r-2 py-1">Help</a>
-        <a href="#" className="text-grey-darkest no-underline text-sm px-6 border-r-2 py-1">🕽 +12 34 567 890</a>
-        <div className="inline ml-6">
-          <a href="#" className="font-bold text-grey-darkest no-underline text-sm">Login</a>
-          <span className="text-grey-darkest text-sm"> / </span>
-          <a href="#" className="font-bold text-grey-darkest no-underline text-sm">Sign Up</a>
-        </div>
-      </div>
-      <button className="visible lg:invisible mr-6 text-3xl font-bold">𝄘</button>
-    </div>
-  </nav>
-)
+
 
 const Image = () => {
   return (
